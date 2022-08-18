@@ -36,7 +36,7 @@ int main(){
         }else{
             cout<<"NO";
         }
-        cout<<'\n';
+        cout<<endl;
     }
     return 0;
 }
