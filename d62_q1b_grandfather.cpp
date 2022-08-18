@@ -13,7 +13,7 @@ int main(){
     int n,m;
     cin>>n>>m;
     map<ll,vector<ll>> g;
-    vector<set<ll>> res;
+    map<pair<ll,ll>,bool> res;
     while(n--){
         ll f,s;
         cin>>f>>s;
@@ -21,25 +21,24 @@ int main(){
     }
 
     for(pair<ll,vector<ll>> i : g){
-        set<ll> s;
+        vector<ll> s;
         for(ll j:i.second) {
             for(ll k : g[j]){
-                s.insert(k);
+                s.push_back(k);
             }
         }
-        res.push_back(s);
+        FOR(i,0,s.size()){
+            FOR(j,i+1,s.size()){
+                res[{s[i],s[j]}] = true;
+                res[{s[j],s[i]}] = true;
+                
+            }
+        }
     }
     while(m--){
         ll a,b;
         cin>>a>>b;
-        bool ck = false;
-        for (set<ll> s: res){
-            if(s.count(a) && s.count(b) && a!= b){
-                ck = true;
-                break;
-            }
-        }
-        if(ck) cout<<"YES\n";
+        if(res[{a,b}]) cout<<"YES\n";
         else cout<<"NO\n";
     }
     return 0;
