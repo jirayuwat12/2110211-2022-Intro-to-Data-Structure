@@ -24,30 +24,18 @@ using namespace std;
 
 int main(){
     std::ios_base::sync_with_stdio(false); std::cin.tie(0); 
-    int n,m;
-    cin>>n>>m;
-    multiset<int> s;
+    int n;
+    cin>>n;
+    map<string,int> m;
     while(n--){
-        int t;
-        cin>>t;
-        s.insert(t);
+        string a;
+        cin>>a;
+        m[a] ++;
     }
-    int i=1;
-    while(m--){
-        int t;
-        cin>>t;
-        while(t--){
-            int a;
-            cin>>a;
-            if(s.upper_bound(a) != s.end()){
-                s.erase(a);
-            }else{
-                m=0;
-                t=0;
-            }
+    for(auto i : m){
+        if(i.second >1){
+            cout<<i.first<<' '<<i.second<<'\n';
         }
-        i++;
     }
-    cout<<i;
     return 0;
 }

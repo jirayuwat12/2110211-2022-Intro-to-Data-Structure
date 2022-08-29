@@ -32,22 +32,24 @@ int main(){
         cin>>t;
         s.insert(t);
     }
-    int i=1;
-    while(m--){
+    int i=0;
+    while(m-- >0){
+        i++;
         int t;
         cin>>t;
         while(t--){
             int a;
             cin>>a;
-            if(s.upper_bound(a) != s.end()){
-                s.erase(a);
+            auto it = s.upper_bound(a);
+            if(it != s.end()){
+                s.erase(s.find(*it));
             }else{
-                m=0;
+                m=-2;
                 t=0;
             }
         }
-        i++;
     }
+    i += m==-1;
     cout<<i;
     return 0;
 }
