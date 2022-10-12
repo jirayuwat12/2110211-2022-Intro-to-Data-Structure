@@ -4,4 +4,4 @@
 
 1. [priority_queue](priority_queue/PQ.md)
  
-2. [linked_list](linked_list/linked_list.md)
+1. [linked_list](linked_list/linked_list.md)
