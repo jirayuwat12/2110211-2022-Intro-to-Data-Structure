@@ -48,6 +48,46 @@ namespace CP{
 
     public:
     // constructor
+        priority_queue(std::vector<T> &v,const Comp& c = Comp()) :
+            mData(new T[v.size()]()),
+            mCap(v.size()),
+            mSize(v.size()),
+            mLess(c)
+        {
+            for(size_t i = 0;i<mSize;i++) mData[i] = v[i];
+            for(int i = mSize/2-1;i>0;i--) fixDown(i); 
+        }
+        /*
+            common sence 
+                >>O(nlog(n))
+                every step i  <= log2(i)
+                so total <= log2(1) + log2(2) + ... + log2(n)
+                total <= log2(1 x 2 x ...  x n)
+                total <= log2(n!) which <= n x log(n)
+                hence, O(nlog(n))
+            with fixDown
+                >>O()
+                for tree depth = 4
+                -----------------------------------------
+                |depth   |# nodes     |#max fix per node|
+                |--------|------------|-----------------|
+                |0       |1           |4                |    
+                |1       |2           |3                |    
+                |2       |4           |2                |    
+                |3       |8           |1                |    
+                |4       |16          |0                | 
+                |...     |...         |...              |    
+                -----------------------------------------
+                so for tree depth = k
+                k        2^k           h-k which h = level
+                total = sum of k*2^(h-k) from h = 0 to k
+                total = 2^h * sum(k*2^(-k))
+                total < 2^h * 2
+                total < 2^(h+1) which h = log2(n)
+                total < 2^(log2(n) +1)
+                total < 2*n
+                hence, O(n)
+        */
         priority_queue(const Comp & c = Comp()) :
             mData(new T[1]()),
             mSize(0),
