@@ -2,5 +2,6 @@
 
 *643xxxxx21* Jirayuwat Boonchan 
 
-[priority_queue](priority_queue/PQ.md)
-[linked_list](linked_list/linked_list.md)
+1. [priority_queue](priority_queue/PQ.md)
+ 
+2. [linked_list](linked_list/linked_list.md)
