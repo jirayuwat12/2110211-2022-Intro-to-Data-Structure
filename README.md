@@ -3,3 +3,4 @@
 *643xxxxx21* Jirayuwat Boonchan 
 
 [priority_queue](priority_queue/PQ.md)
+[linked_list](linked_list/linked_list.md)
