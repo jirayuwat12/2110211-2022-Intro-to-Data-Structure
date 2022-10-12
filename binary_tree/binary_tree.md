@@ -42,4 +42,11 @@ public:
     >
     ><u>solution from geek for geek</u>
     >[code](https://www.geeksforgeeks.org/huffman-coding-greedy-algo-3/)
+    >my solution [code](huffman_code.cpp)
 
+# Binary Search Tree (BST)
+
+- must be *binary tree*
+- value rules for node *x*
+    1. data in left-subtree nust be **less than** the data in *x*
+    1. data in right-subtree must be **more than** the data in *x*  
