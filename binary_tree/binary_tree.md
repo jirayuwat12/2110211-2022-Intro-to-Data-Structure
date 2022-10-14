@@ -79,4 +79,4 @@ public:
 so `insert`, `erase` and all kind of `find` function takes **O(n)** ( like dymanic array )
 
 
-code for [CP::map_bst](map_bst/map_bst.h)
+code for [CP::map_bst](../map_bst/map_bst.h)
