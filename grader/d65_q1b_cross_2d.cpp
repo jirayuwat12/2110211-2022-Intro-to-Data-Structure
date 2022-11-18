@@ -6,15 +6,18 @@ void cross_2d(vector<vector<int>> &m ,int r1, int r2, int c1, int c2) {
     vector<vector<int>> ret(m.size() - (r2-r1+1),vector<int>(m[0].size() - (c2-c1+1),0));
     int x = 0;
     int y = 0;
-    for(int i = 0;i<ret.size();i++){
-        for(int j =0;j<ret[0].size();j++){
-            if(r1<= i <= r2 && c1<= j <= c2);
+    for(int i = 0;i<m.size();i++){
+
+        for(int j =0;j<m[0].size();j++){
+            if((r1<= i && i <= r2) || (c1<= j && j <= c2)) {}
             else{
                 ret[x][y] = m[i][j];
                 y++;
             }
         }
+        if(r1<= i && i <= r2) x--;
         x++;
+        y=0;
     }
     m = ret;
 }
@@ -40,3 +43,4 @@ int main() {
  }
  return 0;
 }
+// 3 3 1 1 1 1 1 2 3 4 5 6 7 8 9

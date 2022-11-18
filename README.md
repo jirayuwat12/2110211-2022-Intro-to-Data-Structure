@@ -9,3 +9,5 @@ all my done grader is [here](grader)
 1. [linked_list](linked_list/linked_list.md)
 
 1. [map_bst](binary_tree/binary_tree.md)
+
+1. [AVL_tree](AVL_tree\AVL_tree.md)
